@@ -1,5 +1,13 @@
 #week 3: 
-
+"""
+A python program that allow to:
+ 1. add products
+ 2. query product
+ 3. update price from products
+ 4. delete products
+ 5. calculale the total of the invetory
+ 6. show all the products (by me)
+"""
 
 class colors: #colors for console
    HEADER = '\033[95m \t' #\t: to make the text 'center'
@@ -17,20 +25,18 @@ def product_exist(key):
     #check if the product requested exist
     for product in products.keys():
         if product == key:
-            return True
+            return True #product exist
        
-    return False
+    return False #product doesn't exist
     
     
 
 def add_product():
     global input_key
     """ 
-
         check if the inputs are correct
         check if the products already exist
         add the product
-    
     """
     try:
         input_key = input(colors.BLUE +"Insert the name of the product you wanna add: "+ colors.ENDS).strip().lower() # -> read new key, delete all the spaces and convert all the word in lowerCase
@@ -41,7 +47,7 @@ def add_product():
             print(f"{colors.GREEN} '{input_key}' added succesfully")
         else:
             print(f"{colors.FAIL}The product already exist")
-    except ValueError:
+    except ValueError: #if the input of new_price and new_amount isn't in the correct type
         print(f"{colors.FAIL} Wrong inputs: Price and amount have to be numbers: try again\n")
 
 
@@ -66,17 +72,15 @@ def delete_product():
     try:
        products.pop(input_key)
        print(f"{colors.GREEN}The product '{input_key}' was delete succesfully")
-    except:
-        print(f"{colors.FAIL}The product '{input_key}' doesn't exist")
+    except: #inc case the query from the user doesn't exist
+       print(f"{colors.FAIL}The product '{input_key}' doesn't exist")
     
 
 
 
 
-
-
-"""show_product() show all the elements in products
-
+"""
+    show_product() show all the elements in products
     show_one_product() show the produdct requested
 """
 def show_products():
@@ -95,7 +99,14 @@ def show_one_product():
 
 def total_invetory():
     total = sum(map(lambda x: x[0] * x[1], products.values()))
-    show_products()
+    """
+       lambda -> what the lambda does
+       def function(x):
+         for product in products.valuess():
+            total += product[0] * product[1]
+         return total
+    """
+    show_products() 
     print(f"\nTotal: {total}")
 
 
