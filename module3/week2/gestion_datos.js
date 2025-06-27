@@ -19,7 +19,7 @@ const products = {
 }
 
 
-const newMap = new Map ([
+const newMap = new Map ([ // map categories and product
     ["Electronics", "cellPhone"],
     ["Accessories", "Mouse"],
     ["Accessories", "keyboard"]
@@ -27,14 +27,14 @@ const newMap = new Map ([
 
 
 
-export function getAllProducts(){ // get all products
+export function getAllProducts(){ // export to show all products on a page
     return Object.values(products);
 }
 
 
 function formatProduct(){ // show products
     for(const id in products){
-        console.log(`PRODUCT ID: ${id}, Details :` , products[id]);
+        console.log(`PRODUCT ID: ${id}, Details :` , products[id]); // show the the id and them el object inside it
     }     
 }
 
@@ -46,9 +46,11 @@ function formatMapProducts(){
 }
 
 
+// check if products have duplicate items
+const setProducts = new Set(Object.values(products).map(element =>  console.log("unique product: ", element)) ); 
 
-const setProducts = new Set(Object.values(products).map(element =>  console.log("unique product: ", element)) ); // check if products have duplicate items
 
+/* show products in console */
 formatProduct();
 formatMapProducts();
 
