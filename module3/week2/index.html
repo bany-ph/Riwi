@@ -1,17 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-</body>
-    <div class="products-container">    
-        
-
-    </div>
-<script type="module" src="show_products.js"></script>
-<script src=""></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/d5954399fc.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- icons -->
+    <title>products</title>
+  </head>
+  <body>
+    <main>
+      <section id="add-products-container">
+        <div id="container-inputs">
+          <input type="text" id="productName" placeholder="Product Name" />
+          <input type="number" id="productPrice" placeholder="Product Price" />
+          <button type="button" id="send">Add</button>
+        </div>
+      </section>
+      <section id="show-products-container"></section>
+    </main>
+  </body>
+  <script type="module" src="./show_products.js"></script>
 </html>

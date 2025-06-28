@@ -1,27 +1,95 @@
-body{
-
-    font-family: 'Courier New', Courier, monospace;
-    background-color: rgb(62, 68, 85);
+body {
+  font-family: "Courier New", Courier, monospace;
+  font-size: clamp(.8rem,1vw,1.1rem);
 }
 
-.products-container{
-    padding: clamp(.5rem,2vw,3rem);
-   display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 10px;
+main {
+  margin: 0 auto;
+  padding: .5rem;
 }
 
 
-.box-product{
-    padding: 1rem;
-    background-color: aliceblue;
-    border-radius: 10px;
-    padding: 1.5rem;
+#add-products-container{
+    padding: clamp(0rem,1vw,4rem);
+    box-sizing: border-box;
+    margin-bottom: 3rem;
+    border-bottom: 1px solid rgba(171, 184, 207, 0.521);
+}
+
+#container-inputs {
+    display: flex;
+    flex-wrap: wrap;
+   
+
+  & input {
+    padding: .9rem .5rem;
+    width: 100%;
+    border: 1px solid rgba(102, 108, 119, 0.541);
+    border-radius: 5px;
+    margin-block: 0.3rem;
+    outline: none;
+    font-size: 1.050rem;
+    
+  }
+
+  & button{
+    width: 100%;
+    border: none;
+    padding-block: .8rem;
+    margin-block: .5rem;
+    border-radius: 50px;
+    background-color: rgb(49, 62, 90);
+    color: white;
+    font-weight: bolder;
+    cursor: pointer;
+    transition: .4s;
+  }
+  & button:hover{
+    background-color: rgb(109, 139, 204);
+  }
+
+    
 }
 
 
-.title{
-    text-transform: uppercase;
-    font-size: 2rem;
-    letter-spacing: 4px;
+#show-products-container {
+  margin: 0 auto;
+}
+
+.products-box {
+  border: 1px solid rgba(120, 130, 145, 0.541);
+  padding: 0.2rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
+  & p::before {
+    content: "";
+    padding: 0.1rem 0.6rem;
+    background-color: rgb(49, 62, 90);
+    border-radius: 20%;
+    margin-right: 0.5rem;
+  }
+  & span::before{
+    content: "$";
+  } 
+}
+
+.icon {
+  cursor: pointer;
+  color: red;
+}
+
+
+
+
+
+@media (min-width: 800px) {
+    main{
+        max-width: 40vw;
+    }
+  #show-products-container {
+    width: 70%;
+  }
 }
